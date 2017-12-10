@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Les Mills Music and Choreos</title>
+	</head>
+
+	<body>
+		<div>
+			<h2>Les Mills Music and Choreos</h2>
+
+		</div>
+
+
+		<ul>
+			{% for program in programs %}
+			<li>{{ program.name }}
+				<ul>
+					{% for release in program.releases.all %}
+						<li><a href = "{% url "release" release.program.name release.number %}">{{ release.number }}</a></li>
+					{% endfor %}
+				</ul>
+			</li>
+			{% endfor %}
+		</ul>	
+			
+	</body>
+
+
+
+</html>

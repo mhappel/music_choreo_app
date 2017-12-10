@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>{{ release.program.name }} {{ release.number }}</title>
+</head>
+
+<body>
+	<h2>{{ release.program.name }} {{ release.number }}</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Name</th>
+				<th>Length</th>
+			</tr>
+		</thead>	
+		
+		<tbody>
+			{% for track in release.tracks.all %}
+			<tr>
+				<td>{{ track.number }}</td>
+				<td>{{ track.name }}</td>
+				<td>{{ track.length}}</td>
+			</tr>
+			{% endfor %}
+		</tbody>	
+
+	</table>
+	<div><br /><a href = "{% url "index"%}">Home</a></div>
+
+</body>
+
+
+
+
+
+
+
+</html>
